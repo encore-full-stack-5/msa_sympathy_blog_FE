@@ -45,10 +45,11 @@ const BlogMain = () => {
           </div>
         </div>
       </header>
-
-      <div id="container" className="flex mx-52">
-        <div id="posts">
-          <div className="flex siz">
+      <br />
+      <br />
+      <div id="container" className="flex mx-20">
+        <div id="posts" style={{ width: "100rem" }}>
+          <div>
             <div>
               <p style={{ textAlign: "left", fontSize: "22px" }}>이웃새글</p>
             </div>
@@ -64,6 +65,17 @@ const BlogMain = () => {
           </div>
           <br />
           <Post />
+          <br />
+          <Post />
+          <br />
+          <Post />
+          <br />
+          <Post />
+          <br />
+          <Post />
+          <br />
+          <Post />
+          <br />
         </div>
         <div
           id="me"

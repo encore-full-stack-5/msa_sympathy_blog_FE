@@ -1,93 +1,65 @@
-const Post = () => {
+import React, { useState } from "react";
+
+const Post = ({ title, content, nickname, date, likes, comments, onClick }) => {
+  const [liked, setLiked] = useState(false);
+
+  const handleLikeToggle = () => {
+    setLiked(!liked);
+  };
+
   return (
-    <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg max-w-lg">
-      <div class="flex mb-4">
-        <img
-          class="w-12 h-12 rounded-full"
-          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-        />
-        <div class="ml-2 mt-0.5">
-          <span class="block font-medium text-base leading-snug text-black dark:text-gray-100">
-            Loyce Kuvalis
-          </span>
-          <span class="block text-sm text-gray-500 dark:text-gray-400 font-light leading-snug">
-            16 December at 08:25
-          </span>
+    // gma
+    <div className="flex">
+      <div
+        className="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg"
+        style={{ maxWidth: "45rem", width: "570px" }}
+      >
+        <div className="flex mb-4">
+          <img className="w-12 h-12 rounded-full" src="images.png" />
+          <div className="ml-2 mt-0.5">
+            <span className="block font-medium text-base leading-snug text-black dark:text-gray-100">
+              닉네임{nickname}
+            </span>
+            <span className="block text-sm text-gray-500 dark:text-gray-400 font-light leading-snug">
+              2000-00-00 월{date}
+            </span>
+          </div>
+        </div>
+        <span className="block font-medium font-semibold text-base leading-snug text-black dark:text-gray-100 text-left">
+          제목{title}
+        </span>
+        <p className="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal text-left">
+          본문 ...더보기{content}
+        </p>
+
+        <div className="flex justify-between items-center mt-5">
+          <div className="flex items-center">
+            <button onClick={handleLikeToggle} className="w-4">
+              <svg
+                class="text-red-400 w-4 h-auto fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                {liked ? (
+                  <path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" />
+                ) : (
+                  <path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" />
+                )}{" "}
+              </svg>
+            </button>
+            <span className="ml-1 text-gray-500 dark:text-gray-400  font-light">
+              공감 {likes}
+            </span>
+            <img src="chat.png" className="w-4 h-4 ml-10" />
+            <span>댓글 {comments}</span>
+          </div>
         </div>
       </div>
-      <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <div class="flex justify-between items-center mt-5">
-        <div class="flex ">
-          <svg
-            class="p-0.5 h-6 w-6 rounded-full z-20 bg-white dark:bg-gray-800 "
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 16 16"
-          >
-            <defs>
-              <linearGradient id="a1" x1="50%" x2="50%" y1="0%" y2="100%">
-                <stop offset="0%" stop-color="#18AFFF" />
-                <stop offset="100%" stop-color="#0062DF" />
-              </linearGradient>
-              <filter
-                id="c1"
-                width="118.8%"
-                height="118.8%"
-                x="-9.4%"
-                y="-9.4%"
-                filterUnits="objectBoundingBox"
-              >
-                <feGaussianBlur
-                  in="SourceAlpha"
-                  result="shadowBlurInner1"
-                  stdDeviation="1"
-                />
-                <feOffset
-                  dy="-1"
-                  in="shadowBlurInner1"
-                  result="shadowOffsetInner1"
-                />
-                <feComposite
-                  in="shadowOffsetInner1"
-                  in2="SourceAlpha"
-                  k2="-1"
-                  k3="1"
-                  operator="arithmetic"
-                  result="shadowInnerInner1"
-                />
-                <feColorMatrix
-                  in="shadowInnerInner1"
-                  values="0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0"
-                />
-              </filter>
-              <path id="b1" d="M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z" />
-            </defs>
-            <g fill="none">
-              <use fill="url(#a1)" xlink:href="#b1" />
-              <use fill="black" filter="url(#c1)" xlink:href="#b1" />
-              <path
-                fill="white"
-                d="M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z"
-              />
-            </g>
-          </svg>
-          <span class="ml-1 text-gray-500 dark:text-gray-400  font-light">
-            8
-          </span>
-        </div>
-        <div class="ml-1 text-gray-500 dark:text-gray-400 font-light">
-          33 comments
-        </div>
+      <div className=" dark:bg-gray-800">
+        <img src="noImg.png" className="w-40 h-40" />
       </div>
     </div>
   );
 };
+
 export default Post;
