@@ -5,12 +5,15 @@ import "./index.css";
 import BlogMain from "./pages/BlogMain.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout.jsx";
-
+import CreatePost from "./pages/CreatePost.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children: [{ path: "/", element: <BlogMain /> }],
+    children: [
+      { path: "/", element: <BlogMain /> },
+      { path: "/createPost", element: <CreatePost /> },
+    ],
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

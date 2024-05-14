@@ -1,0 +1,114 @@
+.createPost-input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px 7px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+button {
+  background-color: #04c75a;
+  color: #fdfcfc;
+}
+
+.category-setting {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+}
+.meta-setting {
+  padding: 0;
+  border-top: 1px solid #e5e5e5;
+  font-size: 14px;
+  font-family: "Helvetica Neue", helvetica, AppleSDGothicNeo, sans-serif;
+  border-width: 0;
+  border-style: solid;
+  border-color: solid 1px #8a8c91;
+}
+.category-title {
+  padding: 0 20px;
+  width: 25%;
+  margin-bottom: 0;
+  line-height: 54px;
+  white-space: nowrap;
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.54;
+  color: #555;
+}
+.category-select {
+  width: 100%;
+  height: 34px;
+  padding: 0 29px 0 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  font-size: 13px;
+  color: #000;
+  background: #fff;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.post-visibility-setting {
+  display: flex;
+  justify-content: space-between;
+}
+
+.visibility-setting-item {
+  flex: 1;
+  height: 26px;
+}
+
+.visibility-title {
+  padding: 0 20px;
+  width: 25%;
+  margin-bottom: 0;
+  line-height: 54px;
+  white-space: nowrap;
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.54;
+}
+
+.visibility-setting-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  padding: 9px 0 10px;
+}
+
+.visibility-setting-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.visibility-setting-notice {
+  padding-left: 5px;
+  font-size: 12px;
+  color: #000;
+  opacity: 0.3;
+}
+
+.setting-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #dfdfdc;
+  font-size: 12px;
+  line-height: 26px;
+  color: #7d7d7d;
+  background-color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
