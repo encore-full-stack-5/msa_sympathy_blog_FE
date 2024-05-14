@@ -1,0 +1,24 @@
+.comment {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.name {
+  color: blue;
+}
+.date {
+  color: #666;
+  font-size: 0.8em;
+}
+.message {
+  margin-bottom: 10px;
+}
+.footer {
+  font-size: 0.8em;
+  color: #666;
+}

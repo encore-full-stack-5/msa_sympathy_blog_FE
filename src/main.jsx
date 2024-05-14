@@ -6,6 +6,8 @@ import BlogMain from "./pages/BlogMain.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout.jsx";
 import CreatePost from "./pages/CreatePost.jsx";
+import CommentList from "./pages/CommentList.jsx";
+import CreateComment from "./pages/CreateComment.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,6 +15,9 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <BlogMain /> },
       { path: "/createPost", element: <CreatePost /> },
+      { path: "/commentList", element: <CommentList /> },
+      { path: "/createComment", element: <CreateComment /> },
+      ,
     ],
   },
 ]);
