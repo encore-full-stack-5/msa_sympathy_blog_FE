@@ -26,7 +26,8 @@ const BlogMain = () => {
     try {
       const res = await signIn(token);
       if (res.status === 200) {
-        alert("로그인 완료");
+        localStorage.setItem("token", res.data.token);
+        console.log(localStorage.getItem("token"));
       }
     } catch (error) {
       alert("플레이리스트 추가 중 오류가 발생했습니다.");
