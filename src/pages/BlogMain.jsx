@@ -1,11 +1,38 @@
 import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "../components/Dropdown";
 import Post from "../components/Post";
+import { signIn } from "../api/auth";
 
 const BlogMain = () => {
   const [view, setView] = useState(false);
 
   const myNeighbor = () => {};
+  const url = window.location.href;
+  const startIndex = url.indexOf("token=") + 6; // "token=" 다음 인덱스부터 시작
+  const endIndex = url.indexOf("&", startIndex); // "&" 전 인덱스까지
+  const token = url.substring(startIndex, endIndex);
+  console.log(token);
+  localStorage.setItem("token", token);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token && token.length > 6) {
+      // token이 존재하고 6글자 이상인 경우에만 실행
+      login(token);
+    }
+  }, []); // 페이지가 로드될 때 한 번만 실행되도록 설정
+
+  const login = async (token) => {
+    try {
+      const res = await signIn(token);
+      if (res.status === 200) {
+        alert("로그인 완료");
+      }
+    } catch (error) {
+      alert("플레이리스트 추가 중 오류가 발생했습니다.");
+    }
+  };
+
   return (
     <div className="app">
       <header className="header fixed top-0 left-0 right-0 flex items-center justify-between p-5 bg-green-500 h-16">
