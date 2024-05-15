@@ -8,6 +8,7 @@ import Layout from "./pages/Layout.jsx";
 import CreatePost from "./pages/CreatePost.jsx";
 import CommentList from "./pages/CommentList.jsx";
 import CreateComment from "./pages/CreateComment.jsx";
+import Neighbor from "./pages/Neighbor.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       { path: "/createPost", element: <CreatePost /> },
       { path: "/commentList", element: <CommentList /> },
       { path: "/createComment", element: <CreateComment /> },
-      ,
+      { path: "/Neighbor", element: <Neighbor /> },
     ],
   },
 ]);
