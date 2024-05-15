@@ -10,7 +10,7 @@
 * {
   box-sizing: border-box;
 }
-button {
+.button {
   background-color: #04c75a;
   color: #fdfcfc;
 }
