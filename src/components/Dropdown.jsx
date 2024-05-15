@@ -19,7 +19,7 @@ function Dropdown() {
 
   const handleLogout = () => {
     // 로그아웃 처리: 로컬 스토리지에서 아이디와 토큰 제거
-    localStorage.removeItem("token");
+    localStorage.clear();
     setIsLoggedIn(false);
   };
 
