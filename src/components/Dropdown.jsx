@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { signIn } from "../api/auth";
 
 function Dropdown() {
   // 로컬 스토리지에서 아이디와 토큰 가져오기
@@ -26,6 +27,13 @@ function Dropdown() {
 
   const saveTokenToLocalStorage = async (receivedToken) => {
     // 받아온 토큰을 로컬 스토리지에 저장
+    try {
+      const response = await signIn(receivedToken);
+      setData(response.data); // Set the fetched data to state
+      debugger;
+    } catch (error) {
+      console.error("Error fetching recipe data:", error);
+    }
     localStorage.setItem("token", receivedToken);
     setIsLoggedIn(true);
   };

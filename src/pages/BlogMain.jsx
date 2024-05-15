@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Dropdown from "../components/Dropdown";
 import Post from "../components/Post";
-import Comment from "../components/Comment";
 
 const BlogMain = () => {
   const [view, setView] = useState(false);
