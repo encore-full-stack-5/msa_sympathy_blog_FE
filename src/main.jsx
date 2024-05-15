@@ -8,7 +8,9 @@ import Layout from "./pages/Layout.jsx";
 import CreatePost from "./pages/CreatePost.jsx";
 import CommentList from "./pages/CommentList.jsx";
 import CreateComment from "./pages/CreateComment.jsx";
-import Neighbor from "./pages/Neighbor.jsx";
+import Neighbor from "./components/NeighborPost.jsx";
+import Today from "./components/TodayPost.jsx";
+import Visitor from "./components/VisitorPost.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
       { path: "/commentList", element: <CommentList /> },
       { path: "/createComment", element: <CreateComment /> },
       { path: "/Neighbor", element: <Neighbor /> },
+      { path: "/Today", element: <Today /> },
+      { path: "/Visitor", element: <Visitor /> },
     ],
   },
 ]);
