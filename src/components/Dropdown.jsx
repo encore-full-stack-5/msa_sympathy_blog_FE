@@ -1,41 +1,26 @@
 import React, { useState } from "react";
-import { signIn } from "../api/auth";
 
 function Dropdown() {
   // 로컬 스토리지에서 아이디와 토큰 가져오기
-  const token = localStorage.getItem("token");
+  const isLogin = localStorage.getItem("token");
+  const [isLoggedIn, setIsLoggedIn] = useState(!isLogin);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(!!token);
+  const saveTokenToLocalStorage = () => {
+    setIsLoggedIn(true);
+    // console.log(receivedToken);
+  };
 
   const login = () => {
-    const url = window.location.href;
-    const startIndex = url.indexOf("token=") + 6; // "token=" 다음 인덱스부터 시작
-    const endIndex = url.indexOf("&", startIndex); // "&" 전 인덱스까지
-    const token = url.substring(startIndex, endIndex);
-    saveTokenToLocalStorage(token);
-
     window.location.href =
       // "http://192.168.0.12:5173/signin?redirect=" + window.location.href;
       "http://localhost:5174/signin?redirect=" + window.location.href;
+    saveTokenToLocalStorage;
   };
 
   const handleLogout = () => {
     // 로그아웃 처리: 로컬 스토리지에서 아이디와 토큰 제거
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-  };
-
-  const saveTokenToLocalStorage = async (receivedToken) => {
-    // 받아온 토큰을 로컬 스토리지에 저장
-    try {
-      const response = await signIn(receivedToken);
-      setData(response.data); // Set the fetched data to state
-      debugger;
-    } catch (error) {
-      console.error("Error fetching recipe data:", error);
-    }
-    localStorage.setItem("token", receivedToken);
-    setIsLoggedIn(true);
   };
 
   // 토큰을 받아오는 API 호출 및 저장 로직은 여기서 처리해야 합니다.
