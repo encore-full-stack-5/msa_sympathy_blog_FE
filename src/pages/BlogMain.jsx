@@ -25,8 +25,8 @@ const BlogMain = () => {
   }, []); // 페이지가 로드될 때 한 번만 실행되도록 설정
   const signin = () => {
     window.location.href =
-      // "http://192.168.0.12:5173/signin?redirect=" + window.location.href;
-      "http://localhost:5174/signin?redirect=" + window.location.href;
+      "http://192.168.0.12:5173/signin?redirect=" + window.location.href;
+    // "http://localhost:5174/signin?redirect=" + window.location.href;
     saveTokenToLocalStorage;
   };
 
@@ -34,9 +34,12 @@ const BlogMain = () => {
     try {
       const res = await signIn(token);
       if (res.status === 200) {
+        // localStorage.setItem("token", res.data.token);
+        console.log(res.data);
         localStorage.setItem("token", res.data.token);
         console.log(localStorage.getItem("token"));
-
+        localStorage.setItem("my_token", localStorage.getItem("token"));
+        setIsLoggedIn(true);
         const response = await home(token);
         if (response.status === 200) {
           localStorage.setItem("id", response.data.id);
@@ -44,8 +47,8 @@ const BlogMain = () => {
           localStorage.setItem("nickname", response.data.nickname);
           localStorage.setItem("blogName", response.data.blogName);
           console.log(response.data);
-
-          setIsLoggedIn(true);
+          // localStorage.setItem("token", response.data.token);
+          // console.log(localStorage.getItem("token"));
 
           // if (localStorage.getItem("blogName") === "null") {
           //   alert(

@@ -15,6 +15,14 @@
   color: #fdfcfc;
 }
 
+.setting-label:hover {
+  color: #04c75a; /* 원하는 색상으로 변경 */
+  cursor: pointer; /* 마우스 커서 모양 변경 */
+}
+.setting-label.selected {
+  color: #04c75a; /* 선택된 라벨의 글씨 색상을 초록색으로 설정 */
+}
+
 .category-setting {
   display: flex;
   justify-content: space-between;
