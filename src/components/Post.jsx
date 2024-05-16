@@ -36,7 +36,7 @@ const Post = ({ title, content, nickname, date, likes, comments, onClick }) => {
           <div className="flex items-center">
             <button onClick={handleLikeToggle} className="w-4">
               <svg
-                class="text-red-400 w-4 h-auto fill-current"
+                className="text-red-400 w-4 h-auto fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
