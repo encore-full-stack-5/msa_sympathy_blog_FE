@@ -11,6 +11,7 @@ import CreateComment from "./pages/CreateComment.jsx";
 import Neighbor from "./components/NeighborPost.jsx";
 import Today from "./components/TodayPost.jsx";
 import Visitor from "./components/VisitorPost.jsx";
+import BlogHome from "./pages/BlogHome.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,8 @@ const router = createBrowserRouter([
       { path: "/Neighbor", element: <Neighbor /> },
       { path: "/Today", element: <Today /> },
       { path: "/Visitor", element: <Visitor /> },
+      { path: "/home", element: <BlogHome /> },
+      ,
     ],
   },
 ]);
