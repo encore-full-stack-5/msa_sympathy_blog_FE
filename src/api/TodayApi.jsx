@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://your-api-url/";
+const API_URL = "/api/v1/users/today";
 
 export const saveToday = async (todayRequest) => {
   try {
