@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  min-height: 100%;
+  background-attachment: scroll;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+  height: 55px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+}
+
+.comment-num {
+  color: #03c75a;
+  font-size: 17px;
+  line-height: 28px;
+  padding: 0 0 0 4px;
+}
+
+.header-text {
+  font-size: 17px;
+}
+
+.view-post-btn {
+  border-bottom-color: rgb(213, 213, 213);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-style: solid;
+  font-size: 12px;
+  margin-right: 16px;
+  margin-top: 14px;
+}
+
+.u-cbox-comment-area {
+  padding: 17px 20px 14px;
+  margin: 0 -20px;
+}

@@ -11,13 +11,6 @@ export default function CommentList() {
               <div className="card">
                 <div className="card-body">
                   <div className="d-flex flex-start align-items-center">
-                    <img
-                      className="rounded-circle shadow-1-strong me-3"
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
-                      alt="avatar"
-                      width="60"
-                      height="60"
-                    />
                     <div>
                       <h6 className="fw-bold text-primary mb-1">
                         Lily Coleman
@@ -60,13 +53,6 @@ export default function CommentList() {
               <div className="card">
                 <div className="card-body">
                   <div className="d-flex flex-start align-items-center">
-                    <img
-                      className="rounded-circle shadow-1-strong me-3"
-                      src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
-                      alt="avatar"
-                      width="60"
-                      height="60"
-                    />
                     <div>
                       <h6 className="fw-bold text-primary mb-1">
                         Lily Coleman
