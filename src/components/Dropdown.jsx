@@ -5,21 +5,20 @@ function Dropdown() {
   const isLogin = localStorage.getItem("token");
   const [isLoggedIn, setIsLoggedIn] = useState(!isLogin);
 
-  const saveTokenToLocalStorage = () => {
-    setIsLoggedIn(true);
+  const saveTokenToLocalStorage = (token) => {
     // console.log(receivedToken);
   };
 
   const login = () => {
+    setIsLoggedIn(true);
     window.location.href =
-      // "http://192.168.0.12:5173/signin?redirect=" + window.location.href;
-      "http://localhost:5174/signin?redirect=" + window.location.href;
-    saveTokenToLocalStorage;
+      "http://192.168.0.12:5173/signin?redirect=" + window.location.href;
+    // "http://localhost:5174/signin?redirect=" + window.location.href;
   };
 
   const handleLogout = () => {
     // 로그아웃 처리: 로컬 스토리지에서 아이디와 토큰 제거
-    localStorage.removeItem("token");
+    localStorage.clear();
     setIsLoggedIn(false);
   };
 
